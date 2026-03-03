@@ -38,7 +38,8 @@ module.exports = function (keycloak, logoutUrl) {
       const host = request.hostname
       const headerHost = request.headers.host.split(':')
       const port = headerHost[1] || ''
-      redirectUrl = request.protocol + '://' + host + (port === '' ? '' : ':' + port) + '/'
+      //redirectUrl = request.protocol + '://' + host + (port === '' ? '' : ':' + port) + '/'
+      redirectUrl = 'https://' + host + (port === '' ? '' : ':' + port) + '/public/home';
     }
     const keycloakLogoutUrl = keycloak.logoutUrl(redirectUrl, idTokenHint)
 
